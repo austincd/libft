@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 15:33:01 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/27 16:00:01 by adaly            ###   ########.fr       */
+/*   Updated: 2017/04/27 19:25:28 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,4 +124,8 @@ void			*ft_read_file(int fd, long long offset, long long size);
 char			*ft_strndup(char *str, long long len);
 char			*ft_strcdup(char *str, char c);
 int				ft_get_next_n_lines(int fd, int n, char **line);
+void			ft_shift_data(long long fd, long long offset, long long size, \
+long long shift);
+void			ft_make_room(long long fd, long long to_add, long long offset);
+
 #endif
