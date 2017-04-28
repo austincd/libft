@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_restrcat.c                                      :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/06 11:30:29 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/27 17:37:24 by adaly            ###   ########.fr       */
+/*   Created: 2017/04/26 18:25:54 by adaly             #+#    #+#             */
+/*   Updated: 2017/04/26 18:33:23 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_restrcat(char **dst, char *src)
+char	*ft_strndup(char *str, long long len)
 {
-	char *tmp;
+	long long	counter;
+	char		*new;
 
-	tmp = *dst;
-	if (*dst && src)
-	{
-		*dst = ft_strjoin(*dst, src);
-		free (tmp);
-	}
-	else if (src)
-	{
-		*dst = ft_strdup(src);
-		free (tmp);
-	}
-	return (*dst);
+	counter = 0;
+	new = NULL;
+	new = ft_strnew(len);
+	if (new)
+		ft_strlcpy(new, str, len + 1);
+	return (new);
 }

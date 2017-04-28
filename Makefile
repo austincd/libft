@@ -6,7 +6,7 @@
 #    By: adaly <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/05 14:16:26 by adaly             #+#    #+#              #
-#    Updated: 2017/04/19 15:05:52 by adaly            ###   ########.fr        #
+#    Updated: 2017/04/27 15:58:40 by adaly            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -44,7 +44,8 @@ ft_str_is_alpha.c ft_str_is_printable.c ft_str_is_uppercase.c \
 ft_str_is_numeric.c ft_str_is_lowercase.c ft_utf8width.c \
 ft_putcutf8_fd.c ft_restrcat.c ft_restrccat.c ft_longlongcat.c \
 ft_open_file.c ft_next_square.c ft_next_sqrt.c ft_how_many_char.c \
-ft_strequ_multi.c ft_find_replace.c ft_lowercase.c ft_read_file.c
+ft_strequ_multi.c ft_find_replace.c ft_lowercase.c ft_read_file.c \
+ft_get_next_n_lines.c get_next_line.c
 
 OBJECTS1= ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 ft_isascii.o ft_isdigit.o ft_isprint.o ft_memccpy.o \
@@ -75,7 +76,8 @@ ft_str_is_alpha.o ft_str_is_printable.o ft_str_is_uppercase.o \
 ft_str_is_numeric.o ft_str_is_lowercase.o ft_putcutf8_fd.o \
 ft_utf8width.o ft_restrcat.o ft_restrccat.o ft_longlongcat.o \
 ft_open_file.o ft_next_square.o ft_next_sqrt.o ft_how_many_char.o \
-ft_strequ_multi.o ft_find_replace.o ft_lowercase.o ft_read_file.o
+ft_strequ_multi.o ft_find_replace.o ft_lowercase.o ft_read_file.o \
+ft_get_next_n_lines.o get_next_line.o
 
 all: $(NAME)
 
