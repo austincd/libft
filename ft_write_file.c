@@ -6,30 +6,33 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/29 06:23:39 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/29 06:34:05 by adaly            ###   ########.fr       */
+/*   Updated: 2017/04/29 19:29:11 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_write_file(int fd, void *data, long long size)
 {
 	long long	to_write;
 	int			bpc;
-	int			free;
+	int			tofree;
 
-	free = 0;
+	tofree = 0;
+	bpc = 512;
 	to_write = size;
 	if (!data)
 	{
 		data = ft_memalloc(bpc);
-		free = 1;
+		tofree = 1;
 	}
 	while (to_write)
 	{
 		if (bpc < to_write)
-			to_write -= write(fd, data, bpc);;
+			to_write -= write(fd, data, bpc);
 		else if (bpc >= to_write)
 			to_write -= write(fd, data, to_write);
 	}
-	if (free)
-		free (data);
+	if (tofree)
+		free(data);
 }

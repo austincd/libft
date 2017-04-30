@@ -6,9 +6,11 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 18:47:04 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/27 19:24:37 by adaly            ###   ########.fr       */
+/*   Updated: 2017/04/29 19:27:16 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void		ft_make_room(long long fd, long long to_add, long long offset)
 {
