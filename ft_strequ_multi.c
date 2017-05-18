@@ -6,13 +6,13 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 19:28:23 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/15 15:28:34 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 15:24:41 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strequ_multi(char *str, char **table, int num)
+int	ft_strequ_multi(char *str, char **table, int num)
 {
 	int index;
 

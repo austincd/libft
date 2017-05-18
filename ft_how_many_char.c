@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 19:31:37 by adaly             #+#    #+#             */
-/*   Updated: 2017/03/07 19:33:36 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 15:25:03 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	ft_how_many_char(char *str, char c)
 		while (*str)
 		{
 			if (*str == c)
-				 ++counter;
+				++counter;
 			++str;
 		}
 	}

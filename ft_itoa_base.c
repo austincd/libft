@@ -6,11 +6,11 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 09:00:43 by exam              #+#    #+#             */
-/*   Updated: 2017/05/16 09:20:29 by exam             ###   ########.fr       */
+/*   Updated: 2017/05/18 15:29:53 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static void	ft_charcat(char *str, char c)
 {
@@ -39,8 +39,9 @@ static int	ft_numlen(long long num, int base)
 
 static void	ft_itoa_internal(char *str, long long num, int base)
 {
-	char	digits[17] = "0123456789ABCDE";
+	char	digits[17];
 
+	ft_strlcpy(digits, "0123456789ABCDE", 17);
 	if (str)
 	{
 		if (num < base)
@@ -60,7 +61,7 @@ static char	*ft_strnew(int length)
 
 	counter = 0;
 	new = NULL;
-	new = (char*)malloc(sizeof(char)* length + 1);
+	new = (char*)malloc(sizeof(char) * length + 1);
 	while (counter < length + 1)
 	{
 		new[counter] = 0;
@@ -75,28 +76,25 @@ char		*ft_itoa_base(int value, int base)
 	int			length;
 	char		*new;
 
-	new = NULL;
 	val = value;
 	if (base >= 2 && base <= 16)
 	{
-		if (val < 0 && base == 10)
+		if (val < 0)
 		{
 			val *= -1;
-			length = ft_numlen(val, base) + 1;
-			new = ft_strnew(length);
-			if (new)
+			if (base == 10)
 			{
+				length = ft_numlen(val, base) + 1;
+				new = ft_strnew(length);
 				ft_charcat(new, '-');
-				ft_itoa_internal(new, val, base);
-				return (new);
+			}
+			else
+			{
+				length = ft_numlen(val, base);
+				new = ft_strnew(length);
 			}
 		}
-		else if (val < 0)
-			val *= -1;
-		length = ft_numlen(val, base);
-		new = ft_strnew(length);
-		if (new)
-			ft_itoa_internal(new, val, base);
+		ft_itoa_internal(new, val, base);
 	}
 	return (new);
 }

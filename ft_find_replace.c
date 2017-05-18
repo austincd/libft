@@ -6,17 +6,17 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 19:29:51 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/05 19:31:48 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 15:28:52 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_find_replace(char **p_big, char *p_little, char *p_new)
+int	ft_find_replace(char **p_big, char *p_little, char *p_new)
 {
-	char *new_str;
-	char *old_loc;
-	int old_len;
+	char	*new_str;
+	char	*old_loc;
+	int		old_len;
 
 	new_str = NULL;
 	if (p_big)
@@ -25,7 +25,8 @@ int ft_find_replace(char **p_big, char *p_little, char *p_new)
 		old_loc = ft_strstr(*p_big, p_little);
 		if (old_loc)
 		{
-			new_str = ft_strnew(ft_strlen(*p_big) + ft_strlen(p_new) - ft_strlen(p_little));
+			new_str = ft_strnew(ft_strlen(*p_big) + \
+			ft_strlen(p_new) - ft_strlen(p_little));
 			if (new_str)
 			{
 				ft_strncat(new_str, *p_big, (old_loc - *p_big));

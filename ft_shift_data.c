@@ -6,16 +6,17 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/27 19:03:33 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/27 19:22:23 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 15:32:05 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_shift_data(long long fd, long long offset, long long size, long long shift)
+void		ft_shift_data(long long fd, long long offset, \
+						long long size, long long shift)
 {
-	long long temp;
-	void	  *buff;
+	long long	temp;
+	void		*buff;
 
 	temp = 0;
 	temp = offset;

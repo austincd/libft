@@ -6,10 +6,9 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 11:33:23 by adaly             #+#    #+#             */
-/*   Updated: 2017/02/06 15:51:21 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 14:58:23 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*PURPOSE: TO REPLACE DST WITH A COPY OF ITSELF JOINED TO SRC AND FREE IT'S PREVIOUS INCARNATION. COPYING WILL GO UP TO BUT WILL NOT INCLUDE CHAR C*/
 
 #include "libft.h"
 

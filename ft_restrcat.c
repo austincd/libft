@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 11:30:29 by adaly             #+#    #+#             */
-/*   Updated: 2017/04/27 17:37:24 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 15:31:20 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*ft_restrcat(char **dst, char *src)
 	if (*dst && src)
 	{
 		*dst = ft_strjoin(*dst, src);
-		free (tmp);
+		free(tmp);
 	}
 	else if (src)
 	{
 		*dst = ft_strdup(src);
-		free (tmp);
+		free(tmp);
 	}
 	return (*dst);
 }
