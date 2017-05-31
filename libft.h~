@@ -6,7 +6,7 @@
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 15:33:01 by adaly             #+#    #+#             */
-/*   Updated: 2017/05/30 20:04:39 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/17 04:56:54 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,5 @@ long long shift);
 void			ft_make_room(long long fd, long long to_add, long long offset);
 int				ft_create_file(char *filename);
 void			ft_write_file(int fd, void *data, long long size);
-unsigned long	ft_char_expand(unsigned long c);
+
 #endif

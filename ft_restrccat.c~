@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_float.c                                    :+:      :+:    :+:   */
+/*   ft_restrccat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 05:09:48 by adaly             #+#    #+#             */
-/*   Updated: 2017/05/18 22:22:35 by adaly            ###   ########.fr       */
+/*   Created: 2017/02/06 11:33:23 by adaly             #+#    #+#             */
+/*   Updated: 2017/02/06 15:51:21 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*PURPOSE: TO REPLACE DST WITH A COPY OF ITSELF JOINED TO SRC AND FREE IT'S PREVIOUS INCARNATION. COPYING WILL GO UP TO BUT WILL NOT INCLUDE CHAR C*/
 
 #include "libft.h"
 
-char	*ft_itoa_float(long double num, int base)
+char	*ft_restrccat(char **dst, char *src, char c)
 {
-	long long	integer;
-	long long	decimal;
-	long double	temp;
-	char		*new;
+	char *found;
+	char *tmp;
 
-	integer = num / 1;
-	temp = num - integer;
-	decimal = 0;
-	while (decimal < 9)
+	found = NULL;
+	if (!(found = ft_strchr(src, c)))
 	{
-		temp *= 10;
-		++decimal;
+		ft_restrcat(dst, src);
 	}
-	decimal = (long long)temp;
-	new = ft_strjoin(ft_itoa_base(integer, base), ".");
-	ft_restrcat(&new, ft_itoa_base(decimal, base));
-	return (new);
+	else
+	{
+		tmp = ft_strsub(src, 0, (found - src));
+		ft_restrcat(dst, tmp);
+	}
+	return (*dst);
 }

@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 09:00:43 by exam              #+#    #+#             */
-/*   Updated: 2017/05/18 22:07:14 by adaly            ###   ########.fr       */
+/*   Updated: 2017/05/18 17:05:42 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,29 @@ static void	ft_itoa_internal(char *str, long long num, int base)
 	}
 }
 
+static char	*ft_strnew(int length)
+{
+	char	*new;
+	int		counter;
+
+	counter = 0;
+	new = NULL;
+	new = (char*)malloc(sizeof(char) * length + 1);
+	while (counter < length + 1)
+	{
+		new[counter] = 0;
+		++counter;
+	}
+	return (new);
+}
+
 char		*ft_itoa_base(int value, int base)
 {
 	long long	val;
-	int		length;
+	int			length;
 	char		*new;
 
 	val = value;
-	new = NULL;
 	if (base >= 2 && base <= 16)
 	{
 		if (val < 0)
@@ -73,10 +88,12 @@ char		*ft_itoa_base(int value, int base)
 				new = ft_strnew(length);
 				ft_charcat(new, '-');
 			}
+			else
+			{
+				length = ft_numlen_base(val, base);
+				new = ft_strnew(length);
+			}
 		}
-		length = ft_numlen_base(val, base);
-		if (!new)
-			new = ft_strnew(length);	
 		ft_itoa_internal(new, val, base);
 	}
 	return (new);

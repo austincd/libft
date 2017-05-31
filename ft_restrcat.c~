@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_float.c                                    :+:      :+:    :+:   */
+/*   ft_restrcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adaly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 05:09:48 by adaly             #+#    #+#             */
-/*   Updated: 2017/05/18 22:22:35 by adaly            ###   ########.fr       */
+/*   Created: 2017/02/06 11:30:29 by adaly             #+#    #+#             */
+/*   Updated: 2017/05/18 15:28:12 by adaly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa_float(long double num, int base)
+char	*ft_restrcat(char **dst, char *src)
 {
-	long long	integer;
-	long long	decimal;
-	long double	temp;
-	char		*new;
+	char *tmp;
 
-	integer = num / 1;
-	temp = num - integer;
-	decimal = 0;
-	while (decimal < 9)
+	tmp = *dst;
+	if (*dst && src)
 	{
-		temp *= 10;
-		++decimal;
+		*dst = ft_strjoin(*dst, src);
+		free (tmp);
 	}
-	decimal = (long long)temp;
-	new = ft_strjoin(ft_itoa_base(integer, base), ".");
-	ft_restrcat(&new, ft_itoa_base(decimal, base));
-	return (new);
+	else if (src)
+	{
+		*dst = ft_strdup(src);
+		free(tmp);
+	}
+	return (*dst);
 }
